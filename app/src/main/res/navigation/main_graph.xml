@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@+id/main_graph"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/wallets"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/wallets"
+        android:name="com.savitskiy.loftcoin.ui.wallets.WalletsFragment"
+        android:label="@string/wallets"
+        tools:layout="@layout/fragment_wallets"/>
+
+    <fragment
+        android:id="@+id/rates"
+        android:name="com.savitskiy.loftcoin.ui.rates.RatesFragment"
+        android:label="@string/rates"
+        tools:layout="@layout/fragment_rates">
+        <action
+            android:id="@+id/action_currency_dialog"
+            app:destination="@id/currency_dialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/converter"
+        android:name="com.savitskiy.loftcoin.ui.converter.ConverterFragment"
+        android:label="@string/converter"
+        tools:layout="@layout/fragment_converter"/>
+
+    <dialog
+        android:id="@+id/currency_dialog"
+        android:name="com.savitskiy.loftcoin.ui.rates.RatesCurrencyDialog"
+        android:label="RatesCurrencyDialog" />
+
+</navigation>
